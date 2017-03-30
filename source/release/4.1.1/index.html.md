@@ -83,6 +83,18 @@ If you want to use other packages from EPEL, you should make sure to not
 include collectd. Either use `includepkgs` and add those you need, or use
 `excludepkgs=collectd*`.
 
+## What's New in 4.1.1 Async release?
+On March 30th 2017 the oVirt team issued an async release including the following fixes:
+
+#### oVirt Engine
+ - [BZ 1429534](https://bugzilla.redhat.com/1429534) <b>[scale] - tasks rejection, causing to corrupted monitoring.</b><br>
+ - [BZ 1434941](https://bugzilla.redhat.com/1434941) <b>Previewing 3.5 snapshot with memory on 4.1 setup should not be allowed</b><br>
+ - [BZ 1417518](https://bugzilla.redhat.com/1417518) <b>[HE] high availability compromised due to duplicate spm id</b><br>
+
+#### VDSM
+
+ - [BZ 1426440](https://bugzilla.redhat.com/1426440) <b>During Live Merge, clear information about top/base/active volumes is not provided by INFO level logging</b><br>
+
 
 ## What's New in 4.1.1?
 
@@ -120,8 +132,7 @@ include collectd. Either use `includepkgs` and add those you need, or use
 
 #### oVirt Engine Metrics
 
- - [BZ 1434573](https://bugzilla.redhat.com/1434573) <b>Load apache collectd plugin on engine machine</b><br>
- - [BZ 1424997](https://bugzilla.redhat.com/1424997) <b>[RFE]  Update fluentd configuration to fit the common data model</b><br>
+ - [BZ 1424997](https://bugzilla.redhat.com/1424997) <b>[RFE]  Update fluentd configuration to fit the common data model</b><br>Feature: <br>Updated the fluentd configuration so the collectd record will be transformed to fit the common data model.<br><br>Reason: <br>The common data model is required so that data coming from multiple environments can co-exists without merging together and having different meaning to the same field name.<br>  <br>Result: <br>The data sent to the remote metrics store is now if the common data model format.
 
 ### No Doc Update
 
@@ -163,7 +174,6 @@ include collectd. Either use `includepkgs` and add those you need, or use
  - [BZ 1414455](https://bugzilla.redhat.com/1414455) <b>removing disk in VM edit dialog causes UI error</b><br>
  - [BZ 1410606](https://bugzilla.redhat.com/1410606) <b>Imported VMs has max memory 0</b><br>
  - [BZ 1417217](https://bugzilla.redhat.com/1417217) <b>SR-IOV vNIC unplugged after migration completed</b><br>
- - [BZ 1425108](https://bugzilla.redhat.com/1425108) <b>Hosted engine vm devices are not imported until engine restart</b><br>
  - [BZ 1388456](https://bugzilla.redhat.com/1388456) <b>Disable TLSv1.0 in Apache SSL configuration</b><br>
  - [BZ 1406005](https://bugzilla.redhat.com/1406005) <b>[RFE][Metrics Store] Install Collectd and fluentd with relevant plugins on engine machine</b><br>
  - [BZ 1380356](https://bugzilla.redhat.com/1380356) <b>Engine confused by external network provider not responding to create-port command</b><br>
@@ -185,9 +195,8 @@ include collectd. Either use `includepkgs` and add those you need, or use
  - [BZ 1421973](https://bugzilla.redhat.com/1421973) <b>[UI] Uncaught exception when dragging the whole interface panel on top of other interface panel in the Setup Networks dialog</b><br>
  - [BZ 1374589](https://bugzilla.redhat.com/1374589) <b>remove virtio-win drivers drop down for KVM imports</b><br>
  - [BZ 1429170](https://bugzilla.redhat.com/1429170) <b>Cold move of file based (nfs) disk failed when the VM is cloned from template as thin provision</b><br>
- - [BZ 1429437](https://bugzilla.redhat.com/1429437) <b>REST API - qcow version does not update via path: / ovirt-engine/api/vms/<VM-ID>/diskattachments/<disk-attachment-id>/</b><br>
  - [BZ 1427104](https://bugzilla.redhat.com/1427104) <b>Commit old snapshot ends with 'Error while executing action Revert to Snapshot: Internal Engine Error'</b><br>
- - [BZ 1426265](https://bugzilla.redhat.com/1426265) <b>Sparsify should be blocked on local storage</b><br>
+ - [BZ 1426265](https://bugzilla.redhat.com/1426265) <b>Sparsify should work on local storage</b><br>
  - [BZ 1430754](https://bugzilla.redhat.com/1430754) <b>Exception selecting Direct LUN radio button on new VM</b><br>
  - [BZ 1422779](https://bugzilla.redhat.com/1422779) <b>[UI] - 'Cloud-init' sub tab in the edit VM dialog - Network Interface disappeared from drop down list after adding new interface</b><br>
  - [BZ 1422505](https://bugzilla.redhat.com/1422505) <b>metrics stuff should be in own repo</b><br>
@@ -268,10 +277,6 @@ include collectd. Either use `includepkgs` and add those you need, or use
  - [BZ 1421654](https://bugzilla.redhat.com/1421654) <b>hosted-engine --upgrade-appliance does not show correct the engine version</b><br>
  - [BZ 1411640](https://bugzilla.redhat.com/1411640) <b>[HC] - Include gdeploy package in oVirt Node</b><br>
 
-#### oVirt Hosted Engine HA
-
- - [BZ 1419326](https://bugzilla.redhat.com/1419326) <b>Migration of the HE VM via engine will drop source host to the status 'EngineUnexpectedlyDown'</b><br>
-
 #### oVirt Release Package
 
  - [BZ 1418630](https://bugzilla.redhat.com/1418630) <b>gluster firewalld service should be added to the default firewall zone</b><br>
@@ -319,10 +324,6 @@ include collectd. Either use `includepkgs` and add those you need, or use
  - [BZ 1414265](https://bugzilla.redhat.com/1414265) <b>config.py:_validation has two decorations</b><br>
  - [BZ 1411491](https://bugzilla.redhat.com/1411491) <b>Disk image upload fails on self-hosted engine, requires imageio-daemon restart</b><br>
 
-#### oVirt Engine Metrics
-
- - [BZ 1434570](https://bugzilla.redhat.com/1434570) <b>Load postgresql collectd plugin on engine machine</b><br>
-
 #### oVirt Engine SDK 4 Java
 
  - [BZ 1434334](https://bugzilla.redhat.com/1434334) <b>[Java-SDK] VmsService.list doesn't provide collection of VMs</b><br>
@@ -369,12 +370,14 @@ include collectd. Either use `includepkgs` and add those you need, or use
  - [BZ 1416893](https://bugzilla.redhat.com/1416893) <b>Unable to undeploy hosted-engine host via UI.</b><br>
  - [BZ 1361223](https://bugzilla.redhat.com/1361223) <b>[AAA] Missing principal name option for keytab usage on kerberos</b><br>
  - [BZ 1364132](https://bugzilla.redhat.com/1364132) <b>Once the engine imports the hosted-engine VM we loose the console device</b><br>
+ - [BZ 1425108](https://bugzilla.redhat.com/1425108) <b>Hosted engine vm devices are not imported until engine restart</b><br>
  - [BZ 1317490](https://bugzilla.redhat.com/1317490) <b>[engine-backend] Disks are alphabetically ordered instead of numerically, which causes the guest to see them this way (1,10,2..) instead of (1,2,10)</b><br>
  - [BZ 1401963](https://bugzilla.redhat.com/1401963) <b>installed webadmin-portal-debuginfo is not updated by engine-setup and brokes the engine</b><br>
  - [BZ 1416748](https://bugzilla.redhat.com/1416748) <b>punch iptables holes on OVN hosts during installation</b><br>
  - [BZ 1276670](https://bugzilla.redhat.com/1276670) <b>[engine-clean] engine-cleanup doesn't stop ovirt-vmconsole-proxy-sshd</b><br>
  - [BZ 1329893](https://bugzilla.redhat.com/1329893) <b>UI: explain why we cannot change the logical network settings in the "Manage Networks" window</b><br>
  - [BZ 1416846](https://bugzilla.redhat.com/1416846) <b>OVF of the hosted engine vm is not updated when there is a change in vm devices</b><br>
+ - [BZ 1429437](https://bugzilla.redhat.com/1429437) <b>REST API - qcow version does not update via path: / ovirt-engine/api/vms/<VM-ID>/diskattachments/<disk-attachment-id>/</b><br>
  - [BZ 1416466](https://bugzilla.redhat.com/1416466) <b>Restore HE backup will fail if the HE host has running non-HE VM's</b><br>
  - [BZ 1422374](https://bugzilla.redhat.com/1422374) <b>The 'VirtIO-SCSI Enabled' isn't enabled by default for new templates</b><br>
  - [BZ 1417935](https://bugzilla.redhat.com/1417935) <b>VM to host affinity :  conflict detection mechanism</b><br>
@@ -439,4 +442,9 @@ include collectd. Either use `includepkgs` and add those you need, or use
 ### oVirt Provider OVN
 
  - [BZ 1416748](https://bugzilla.redhat.com/1416748) <b>punch iptables holes on OVN hosts during installation</b><br>
+
+### oVirt Engine DWH
+
+ - [BZ 1404812](https://bugzilla.redhat.com/1404812) <b>dwhd sometimes does not update the engine db before stopping</b><br>
+ - [BZ 1371111](https://bugzilla.redhat.com/1371111) <b>update dwh heartbeat error message to alert only after it did not update for a minute</b><br>
 
